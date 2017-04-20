@@ -52,7 +52,9 @@ class BadgeDetailApiTestCase(APITestCase):
         self.user.set_password('test')
         self.user.save()
 
-        self.badge = BadgeFactory()
+        self.badge = BadgeFactory(
+            creator=self.user
+        )
         self.endpoint = reverse('api:badge-detail', args=[self.badge.id])
 
     def test_not_logged_in(self):
@@ -66,8 +68,6 @@ class BadgeDetailApiTestCase(APITestCase):
         self.client.login(username=self.user.username, password='test')
 
         response = self.client.get(self.endpoint)
-
-        print(response)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
