@@ -1,0 +1,14 @@
+bin
+build
+dist
+include
+lib
+venv
+*.pyc
+*.swp
+*.egg-info
+*.egg/*
+*.eggs/*
+
+# Database
+*.sqlite3
