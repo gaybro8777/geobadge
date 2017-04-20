@@ -33,7 +33,10 @@ class BadgeListApiTestCase(APITestCase):
     def test_post(self):
         self.client.login(username=self.user.username, password='test')
 
-        data = {}
+        data = {
+            'latitude': 0.72,
+            'longitude': 0.43
+        }
 
         response = self.client.post(
             self.endpoint,

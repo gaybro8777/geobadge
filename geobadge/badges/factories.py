@@ -17,5 +17,9 @@ class BadgeFactory(factory.DjangoModelFactory):
         UserFactory
     )
 
+    latitude = fuzzy.FuzzyFloat(-90, 90)
+
+    longitude = fuzzy.FuzzyFloat(-180, 180)
+
     class Meta:
         model = Badge

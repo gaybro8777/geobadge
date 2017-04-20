@@ -14,3 +14,10 @@ class Badge(models.Model):
         related_name='badges',
         help_text='The user who created this badge.'
     )
+
+    latitude = models.FloatField(
+        help_text='The latitude at which the badge is located.'
+    )
+    longitude = models.FloatField(
+        help_text='The longitude at which the badge is loacated.'
+    )
