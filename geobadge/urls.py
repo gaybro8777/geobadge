@@ -12,7 +12,7 @@ schema_view = get_swagger_view(title='API Documentation', url='/api/')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('social_django.urls', namespace='social')),
-    url(r'^api-docs/$', schema_view),
+    url(r'^developer/docs/$', schema_view),
 
     url(
         r'^api/',
