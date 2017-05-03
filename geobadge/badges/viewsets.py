@@ -18,5 +18,6 @@ class BadgeViewSet(viewsets.ModelViewSet):
         This view should return a list of all the badges
         for the currently authenticated user.
         """
-        user = self.request.user
-        return Badge.objects.all()
+        return Badge.objects.filter(
+            creator=self.request.user
+        )

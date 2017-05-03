@@ -4,9 +4,9 @@ from geobadge.accounts.serializers import UserSerializer
 from geobadge.badges.models import Badge
 
 
-class BadgeSerializer(serializers.ModelSerializer):
+class BadgeSerializer(serializers.HyperlinkedModelSerializer):
 
-    href = serializers.HyperlinkedIdentityField(
+    url = serializers.HyperlinkedIdentityField(
         view_name='api:badge-detail'
     )
 
@@ -23,7 +23,7 @@ class BadgeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Badge
         fields = (
-            'id', 'href',
+            'id', 'url',
             'created', 'creator',
             'latitude', 'longitude',
         )
